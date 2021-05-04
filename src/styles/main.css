@@ -9,32 +9,15 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 15px;
-}
-
-.logo {
-    margin: auto 0;
-    padding: 0 10px;
-}
-
 li {
     display: inline;
 }
 
-nav a {    
-    padding: 8px 10px;    
-    text-decoration: none;
+nav a {            
     color: black;
 }
 
-nav .logo, nav a {
-    font-size: large;
-}
-
-a:hover {
+nav a:hover {
     background-color: beige;
 }
 
@@ -55,7 +38,7 @@ a:hover {
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;    
-    width: 16rem;
+    width: 20rem;
 }
 
 .card-head p {
@@ -115,6 +98,26 @@ a:hover {
 
 .flex-column {
     flex-direction: column;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.justify-content-evenly {
+    justify-content: space-evenly;
+}
+
+.justify-content-start {
+    justify-content: flex-start;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
 }
 
 /* Background */
@@ -349,4 +352,8 @@ a:hover {
 
 .ml-5 {
     margin-left: 5rem;
+}
+
+.decoration-none {
+    text-decoration: none;
 }
