@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- <link rel="stylesheet" type="text/css" href="../styles/responsive.css"> -->
@@ -10,15 +10,25 @@
     
 </head>
 <body class="text-white">
-    <nav class="d-flex justify-content-between px-1">
-        <span class="my-auto p-1">Katalog Restoran</span>
-        <ul>
-            <li><a class="decoration-none p-1" href="index.html">Home</a></li>
-            <li><a class="decoration-none p-1" href="#">Favorite</a></li>
-            <li><a class="decoration-none p-1" href="https://github.com/ilham76c">About Us</a></li>
+    <nav id="drawer">
+        <ul class="list-style-none">
+            <li class="mb-1"><a class="decoration-none" href="#">Menu Item 1</a></li>
+            <li class="mb-1"><a class="decoration-none" href="#">Menu Item 2</a></li>
+            <li class="mb-1"><a class="decoration-none" href="#">Menu Item 3</a></li>
+            <li class="mb-1"><a class="decoration-none" href="#">Menu Item 4</a></li>
         </ul>
     </nav>
     
+    <nav class="d-flex justify-content-between px-1">        
+        <span class="my-auto p-1">Katalog Restoran</span>
+        <a id="hamburger" href="#" class="my-auto hidden">☰</a>
+        <ul id="menu">
+            <li class="d-inline"><a class="decoration-none p-1" href="index.html">Home</a></li>
+            <li class="d-inline"><a class="decoration-none p-1" href="#">Favorite</a></li>
+            <li class="d-inline"><a class="decoration-none p-1" href="https://github.com/ilham76c">About Us</a></li>
+        </ul>
+    </nav>   
+
     <div id="jumbotron" class="d-flex justify-content-center align-items-center">
         <div class="container">
             <h1>Katalog Restoran</h1>
@@ -26,6 +36,7 @@
     </div>
 
     <main class="d-flex flex-column">
+        
         <h2 class="mx-auto py-3">Explore Resaturant</h2>
 
         <div id="content" class="d-flex flex-column px-5">
@@ -82,5 +93,7 @@
     <footer class="d-flex justify-content-center">
         <p>Copyright © 2020 - Hunger Apps</p>
     </footer>
+
+    <script src="../scripts/index.js"></script>
 </body>
 </html>
