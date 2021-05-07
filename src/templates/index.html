@@ -2,25 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Katalog Restoran</title>
     <!-- <link rel="stylesheet" type="text/css" href="../styles/responsive.css"> -->
     <link rel="stylesheet" type="text/css" href="../styles/main.css">
     
 </head>
 <body class="text-white">
-    <nav id="drawer">
+    <nav id="drawer" class="pt-1">
         <ul class="list-style-none">
-            <li class="mb-1"><a class="decoration-none" href="#">Menu Item 1</a></li>
-            <li class="mb-1"><a class="decoration-none" href="#">Menu Item 2</a></li>
-            <li class="mb-1"><a class="decoration-none" href="#">Menu Item 3</a></li>
-            <li class="mb-1"><a class="decoration-none" href="#">Menu Item 4</a></li>
+            <li class="mb-1"><a class="decoration-none" href="index.html">Home</a></li>
+            <li class="mb-1"><a class="decoration-none" href="#">Favorite</a></li>
+            <li class="mb-1"><a class="decoration-none" href="https://github.com/ilham76c">About Us</a></li>            
         </ul>
     </nav>
     
     <nav class="d-flex justify-content-between px-1">        
-        <span class="my-auto p-1">Katalog Restoran</span>
+        <span class="my-auto p-1"><b>KATALOG RESTORAN</b></span>
         <a id="hamburger" href="#" class="my-auto hidden">☰</a>
         <ul id="menu">
             <li class="d-inline"><a class="decoration-none p-1" href="index.html">Home</a></li>
@@ -37,7 +36,7 @@
 
     <main class="d-flex flex-column">
         
-        <h2 class="mx-auto py-3">Explore Resaturant</h2>
+        <h2 id="content_title" class="mx-auto py-3">Explore Resaturant</h2>
 
         <div id="content" class="d-flex flex-column px-5">
             
@@ -45,7 +44,7 @@
 
                 <div class="card-head position-relative">
                     <img src="https://dicoding-restaurant-api.el.r.appspot.com/images/medium/41" alt="Avatar">
-                    <p class="position-absolute ml-1">Medan</p>
+                    <p class="position-absolute m-1">Medan</p>
                 </div>     
 
                 <div class="card-body py-1 px-3">
@@ -62,7 +61,7 @@
 
                 <div class="card-head position-relative">
                     <img src="https://dicoding-restaurant-api.el.r.appspot.com/images/medium/07" alt="Avatar">
-                    <p class="position-absolute ml-1">Medan</p>
+                    <p class="position-absolute m-1">Medan</p>
                 </div>     
 
                 <div class="card-body py-1 px-3">
@@ -75,17 +74,22 @@
                 </div>
             </div>
 
-            <!-- <div class="card bg-white mx-1">
+            <div class="card d-flex mb-3 bg-white text-black">
+
                 <div class="card-head position-relative">
-                    <img src="https://dicoding-restaurant-api.el.r.appspot.com/images/medium/07" alt="Avatar">
-                    <p class="position-absolute ml-1">Bali</p>
-                </div>                
-                <div class="card-body">
-                    <p>Rating: 4.5</p>
-                    <h3><a href="#">Run The Gun</a></h3> 
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p> 
+                    <img src="https://dicoding-restaurant-api.el.r.appspot.com/images/medium/38" alt="Avatar">
+                    <p class="position-absolute m-1">Malang</p>
+                </div>     
+
+                <div class="card-body py-1 px-3">
+                    <div class="d-flex justify-content-between">
+                        <h3><a class="decoration-none" href="#">Pangsit Express</a></h3> 
+                        <p class="my-auto">Rating: 4.7</p>
+                    </div>
+                                        
+                    <p class="text-justify">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.</p> 
                 </div>
-            </div> -->
+            </div>
         </div>
     </main>
 
