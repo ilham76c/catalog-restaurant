@@ -30,7 +30,7 @@ for (const restaurant of data.restaurants) {
     let card = /*html*/`
         <section class="${card_class}">
             <div class="card-head position-relative">
-                <img src="${restaurant.pictureId}" alt="Avatar">
+                <img src="${restaurant.pictureId}" alt="Gambar ${restaurant.name}">
                 <p class="position-absolute m-1">${restaurant.city}</p>
             </div>     
 
