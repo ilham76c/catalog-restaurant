@@ -28,7 +28,7 @@ for (const restaurant of data.restaurants) {
         card_class += " flex-row-reverse";
     }
     let card = /*html*/`
-        <div class="${card_class}">
+        <section class="${card_class}">
             <div class="card-head position-relative">
                 <img src="${restaurant.pictureId}" alt="Avatar">
                 <p class="position-absolute m-1">${restaurant.city}</p>
@@ -41,7 +41,7 @@ for (const restaurant of data.restaurants) {
                 </div>                                    
                 <p class="text-justify">${restaurant.description}</p> 
             </div>
-        </div>
+        </section>
         `;
     html += card;
     idx++;    
