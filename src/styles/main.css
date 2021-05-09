@@ -124,11 +124,10 @@ footer, nav {
     width: 100%;
 }
 
-.card-body a {
-    /* background-image: linear-gradient(to right, rgba(255,255,255,0) 50%, #ddd 50%);
-    background-position: -0% 0;
-    background-size: 200% auto; */
+.card-body a {    
     color: #222;
+    min-width: 44px;
+    min-height: 44px;
     line-height: 44px;
     transition: color 0.5s;
     font-size: 1.3em;
