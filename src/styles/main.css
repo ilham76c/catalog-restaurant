@@ -38,16 +38,21 @@ footer, nav {
 
 #jumbotron {
     background-image: url(../public/images/heros/hero-image_2.jpg);
-    width: 100%;    
+    width: 100%;        
     height: 70vh;
     background-repeat: no-repeat;
-    background-size: auto;    
+    background-size: 100%;        
+    object-fit: cover;
     color: white;
+    /* full height for iphone x */
+    /* background-size: 100% 100%; */
 }
 
 #hamburger {
     font-size: 32px;
-    text-decoration: none;    
+    text-decoration: none;     
+    min-width: 44px;
+    min-height: 44px;    
 }
 #drawer {
     width: 180px;
@@ -67,6 +72,11 @@ footer, nav {
 #drawer.open {
     right: 0;
     /* transform: translate(0, 0); */
+}
+
+#drawer a {
+    padding: 0.85rem;
+    /* padding-bottom: 0.85rem; */
 }
 /* Card */
 .card {    
@@ -589,9 +599,10 @@ footer, nav {
 @media (min-width: 768px) and (max-width: 1024px) {
 
     /* CSS */
-    /* .card {
+    .card {
         flex-direction: column;
-    }      */
+    }     
+
     #jumbotron {
         height: 40vh;
     }
@@ -609,6 +620,7 @@ footer, nav {
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 
     /* CSS */    
+    
 
 }
 
@@ -620,7 +632,7 @@ footer, nav {
 @media (min-width: 481px) and (max-width: 767px) {
 
     #content_title {
-        padding: 1rem 0;
+        padding: 1.5rem 0;
     }
     
     .card {
@@ -640,7 +652,11 @@ footer, nav {
     }
 
     #jumbotron {
-        display: none;
+        height: 40vh;
+    }
+
+    #content {
+        padding: 0 1rem;
     }
 
 }
@@ -655,7 +671,7 @@ footer, nav {
     /* CSS */
 
     #content_title {
-        padding: 1rem 0;
+        padding: 1.5rem 0;
     }
 
     #menu {
@@ -667,7 +683,7 @@ footer, nav {
     }
 
     #jumbotron {
-        display: none;
+        height: 35vh;
     }
 
     .card {
