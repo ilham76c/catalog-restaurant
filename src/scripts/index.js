@@ -34,9 +34,9 @@ for (const restaurant of data.restaurants) {
                 <p class="position-absolute m-1">${restaurant.city}</p>
             </div>     
 
-            <div class="card-body py-1 px-3">
+            <div class="card-body pb-1 px-3">
                 <div class="d-flex justify-content-between">
-                    <h3><a class="decoration-none" href="#">${restaurant.name}</a></h3> 
+                    <h3><a class="decoration-none d-inline-block" href="#">${restaurant.name}</a></h3> 
                     <p class="my-auto">Rating: ${restaurant.rating}</p>
                 </div>                                    
                 <p class="text-justify">${restaurant.description}</p> 
