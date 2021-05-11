@@ -12,19 +12,27 @@ const content = document.getElementById('content');
 
 hamburgerButtonElement.addEventListener("click", (event) => {
     drawerElement.classList.toggle("open");
+    
+    if (hamburgerButtonElement.innerHTML === '☰') {
+        hamburgerButtonElement.innerHTML = 'x';    
+    } else {
+        hamburgerButtonElement.innerHTML = '☰';
+    }
+    
     event.stopPropagation();
 });
 
 mainElement.addEventListener("click", (event) => {
     drawerElement.classList.remove("open");
-    event.stopPropagation();
+    hamburgerButtonElement.innerHTML = '☰';
+    event.stopPropagation();    
 });
 
-let idx = 1;
+
 let html = '';
-for (const restaurant of data.restaurants) {
+for (const [idx, restaurant] of data.restaurants.entries()) {
     let card_class = "card d-flex mb-3 bg-white text-black";
-    if (idx % 2 == 0) {
+    if ((idx+1) % 2 == 0) {
         card_class += " flex-row-reverse";
     }
     let card = /*html*/`
@@ -42,9 +50,9 @@ for (const restaurant of data.restaurants) {
                 <p class="text-justify">${restaurant.description}</p> 
             </div>
         </section>
-        `;
-    html += card;
-    idx++;    
+    `;
+
+    html += card;    
 }
 
 content.innerHTML = html;
