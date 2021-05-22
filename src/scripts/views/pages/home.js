@@ -4,14 +4,16 @@ import { createRestaurantItemTemplate } from '../templates/template-creator';
 const Home = {
   async render() {
     return /*html*/`
-        <h2 id="content_title" class="mx-auto py-3">Explore Restaurant</h2>
+        <div id="restaurants" class="d-flex flex-column px-5">
+            <h2 id="content_title" class="mx-auto py-3">Explore Restaurant</h2>
+        </div>
     `;
   },
 
   async afterRender() {
     const restaurants = await RestaurantSource.listRestaurants();
     
-    const moviesContainer = document.querySelector('#content');
+    const moviesContainer = document.querySelector('#restaurants');
     for (const [idx, restaurant] of restaurants.entries()) {                
         moviesContainer.innerHTML += createRestaurantItemTemplate(restaurant);
         if ((idx+1) % 2 == 0) {            

@@ -8,16 +8,14 @@ class RestaurantSource {
         const responseJson = await response.json();
         return responseJson.restaurants;
     }
+    
 
-    static async upcomingMovies() {
-        const response = await fetch(API_ENDPOINT.UPCOMING);
+    static async detailRestaurant(id) {
+        const response = await fetch(API_ENDPOINT.DETAIL(id), {
+            method: "GET",
+        });
         const responseJson = await response.json();
-        return responseJson.results;
-    }
-
-    static async detailMovie(id) {
-        const response = await fetch(API_ENDPOINT.DETAIL(id));
-        return response.json();
+        return responseJson.restaurant;
     }
 }
 

@@ -22,6 +22,10 @@ footer, nav {
     background-color: #393e46;
 }
 
+main {
+    min-height: 100vh;
+}
+
 .skip-to-content-link {
     background: #e77e23;
     height: 30px;
@@ -147,6 +151,14 @@ footer, nav {
   }
 /* End Card */
 
+#detail img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    width: 50%;    
+    height: 100%;
+    object-fit: cover;
+}
 
 .mx-auto {
     margin: 0 auto;
@@ -175,6 +187,9 @@ footer, nav {
     display: flex;
 }
 
+.d-none {
+    display: none;
+}
 /* End Display */
 
 /* Flex Box */
@@ -615,6 +630,7 @@ footer, nav {
 .hidden {
     visibility: hidden;
 }
+
 /* 
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops
@@ -654,7 +670,7 @@ footer, nav {
         height: 40vh;
     }
 
-    #content {
+    #restaurants {
         padding: 0 2rem;
     }
 }
@@ -702,7 +718,7 @@ footer, nav {
         height: 40vh;
     }
 
-    #content {
+    #restaurants {
         padding: 0 1rem;
     }
 
@@ -741,7 +757,7 @@ footer, nav {
         padding: 1rem 2rem;
     }
 
-    #content {
+    #restaurants {
         padding: 0 1rem;
     }
 
