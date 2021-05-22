@@ -57,6 +57,9 @@ footer, nav {
     min-width: 44px;
     min-height: 44px;    
     z-index: 3;
+    background-color: transparent;
+    color: white;
+    border-color: transparent;
 }
 
 #drawer {
