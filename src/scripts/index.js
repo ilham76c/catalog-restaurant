@@ -9,9 +9,9 @@ const app = new App({
 });
 
 window.addEventListener('hashchange', () => {
-  // app.renderPage();
+  app.renderPage();
 });
 
 window.addEventListener('load', () => {
-  // app.renderPage();
+  app.renderPage();
 });
