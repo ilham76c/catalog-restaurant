@@ -19,27 +19,34 @@ const createRestaurantItemTemplate = (restaurant) => /*html*/ `
 `;
 
 const createRestaurantDetailTemplate = (restaurant) => /*html*/ `
-    <section class="d-flex mb-3 bg-white text-black">
-        <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Gambar ${restaurant.name}">
-        <div class="d-flex flex-column m-1 bg-red card-body">
-            <div class="d-flex justify-content-between">
-                <div>
-                    <p>Address</p>
-                    <span>${restaurant.address}</span>
-                </div>                
-                <span>${restaurant.rating}</span>
-            </div>            
-            <p>Categories</p>
-            ${createCategories(restaurant.categories)}
+    <section class="card d-flex flex-column mb-3 bg-white text-black">
+        <div class="d-flex w-100">
+            <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Gambar ${restaurant.name}">
 
-            <p>Menu</p>
-            <div class="d-flex">
+            <div class="mx-1 w-100">
+                
+                <p><b>Rating</b>&emsp;&emsp;&emsp;: ${restaurant.rating}</p>
+                <p><b>Address</b>&emsp;&emsp;: ${restaurant.address}</p>
+                <p><b>Categories</b>&emsp;: ${createCategories(restaurant.categories)}</p>
+                
                 ${createMenus(restaurant.menus)}
+                   
             </div>
-                        
-            
-            <!--<p>${restaurant.customerReviews}</p>            -->
         </div>
+
+
+        <div id="komentar" class="pb-1 py-1 px-1">
+            <h3>Customer Reviews</h3>
+            ${createCustomerReviews(restaurant.customerReviews)}
+
+            <div class="d-flex flex-column mt-2">
+                <textarea rows="5" class="w-100 text-left" placeholder="Tambahkan komentar"></textarea>
+                <div class="text-right py-1">
+                    <button>Kirim</button>
+                </div>
+            </div>
+        </div>
+        
     </section>
 `;
 
@@ -51,19 +58,37 @@ const createCategories = (categories) => {
 
 const createMenus = (menus) => {
     return /*html*/ `
-        <div class="d-flex flex-column">
-            Foods
-            <ul>
-                ${menus.foods.reduce((accumulator, currentValue) => `${accumulator}<li>${currentValue.name}</li>`, '')}
+    <div class="d-flex flex-column">
+        <div class="flex-1">
+            <b>Foods</b>
+            <ul class="d-flex flex-wrap">
+                ${menus.foods.reduce((accumulator, currentValue) => `${accumulator}<li class="flex-grow-1">${currentValue.name}</li>`, '')}
             </ul>
         </div>
-        <div class="d-flex flex-column">
-            Drinks
-            <ul>
-                ${menus.drinks.reduce((accumulator, currentValue) => `${accumulator}<li>${currentValue.name}</li>`, '')}
+        <div class="flex-1">
+            <b>Drinks</b>
+            <ul class="d-flex flex-wrap">
+                ${menus.drinks.reduce((accumulator, currentValue) => `${accumulator}<li class="flex-grow-1">${currentValue.name}</li>`, '')}
             </ul>
-        <div>
+        </div>
+    </div>
     `;
-}
+};
+
+const createCustomerReviews = (customerReviews) => {
+    let review = '';
+    customerReviews.forEach(customerReview => {
+        review += /*html*/ `
+            <div class="d-flex flex-column mb-1 p-1 komentar">
+                <div class="d-flex justify-content-between mb-1">
+                    <span>${customerReview.name}</span>
+                    <span>${customerReview.date}</span>
+                </div>
+                <span>${customerReview.review}</span>
+            </div>
+        `; 
+    });
+    return review;   
+};
 
 export { createRestaurantItemTemplate, createRestaurantDetailTemplate };

@@ -160,6 +160,7 @@ main {
     object-fit: cover;
 }
 
+
 .mx-auto {
     margin: 0 auto;
 }
@@ -193,6 +194,14 @@ main {
 /* End Display */
 
 /* Flex Box */
+
+.flex-1 {    
+    flex: 1;
+}
+
+.flex-grow-1 {
+    flex-basis: 33%;
+}
 
 .flex-row {
     flex-direction: row;
@@ -631,6 +640,32 @@ main {
     visibility: hidden;
 }
 
+.w-100 {
+    width: 100%;
+}
+.w-75 {
+    width: 75%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.h-100 {
+    height: 100%;
+}
+.h-75 {
+    height: 75%;
+}
+
+.h-50 {
+    height: 50%;
+}
+
+
+.komentar {
+    background-color: lightgray;
+}
 /* 
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops
