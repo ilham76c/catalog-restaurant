@@ -14,11 +14,16 @@ const Detail = {
     async render() {
         document.getElementById("jumbotron").classList.add("d-none");
         return /*html*/ `
-        <div id="detail" class="d-flex flex-column px-5">
-            <h2 id="content_title" class="mx-auto py-2">Detail Restaurant</h2>
-        </div>
-        <div id="likeButtonContainer"></div>
-    `;
+            <div class="d-flex flex-column px-5">
+                <h2 id="content_title" class="mx-auto py-2">Detail Restaurant</h2>
+                <div id="detail">
+                    <div class="d-flex justify-content-center">
+                        <div class="loader"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="likeButtonContainer"></div>
+        `;
     },
 
     async afterRender() {
@@ -26,7 +31,7 @@ const Detail = {
         const restaurant = await RestaurantSource.detailRestaurant(url.id);
         console.log(restaurant);
         const restaurantContainer = document.querySelector("#detail");
-        restaurantContainer.innerHTML +=
+        restaurantContainer.innerHTML =
             createRestaurantDetailTemplate(restaurant);
 
         LikeButtonInitiator.init({
