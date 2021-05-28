@@ -742,11 +742,15 @@ main {
         flex-direction: column;
     }     
 
+    #detail-head {
+        flex-direction: column;
+    }
+
     #jumbotron {
         height: 40vh;
     }
 
-    #restaurants {
+    #content > div {
         padding: 0 2rem;
     }
 }
@@ -782,6 +786,10 @@ main {
         padding: 1rem 2rem;
     }
 
+    #detail-head {
+        flex-direction: column;
+    }
+
     #menu {
         display: none;
     }
@@ -794,7 +802,7 @@ main {
         height: 40vh;
     }
 
-    #restaurants {
+    #content > div {
         padding: 0 1rem;
     }
 
@@ -833,7 +841,11 @@ main {
         padding: 1rem 2rem;
     }
 
-    #restaurants {
+    #detail-head {
+        flex-direction: column;
+    }
+
+    #content > div {
         padding: 0 1rem;
     }
 

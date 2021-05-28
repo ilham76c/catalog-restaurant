@@ -18,13 +18,15 @@ const Home = {
   async afterRender() {
     const restaurants = await RestaurantSource.listRestaurants();
     
-    const moviesContainer = document.querySelector('#restaurants');
+    const restaurantsContainer = document.querySelector('#restaurants');
     for (const [idx, restaurant] of restaurants.entries()) {                
-        moviesContainer.innerHTML = createRestaurantItemTemplate(restaurant);
+        restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
         if ((idx+1) % 2 == 0) {            
-            document.getElementsByTagName('section')[idx].classList.add("flex-row-reverse");
+            restaurantsContainer.getElementsByTagName('section')[idx].classList.add("flex-row-reverse");
         }
-    }    
+    }
+    document.getElementsByClassName("loader")[0].remove();
+
   },
 };
 
