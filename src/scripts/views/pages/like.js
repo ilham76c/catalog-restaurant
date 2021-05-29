@@ -4,15 +4,15 @@ import { createRestaurantItemTemplate } from '../templates/template-creator';
 const Like = {
   async render() {
     return /*html*/ `
-            <div class="d-flex flex-column px-5">
-                <h2 id="content_title" class="mx-auto py-3">Favorite Restaurant</h2>
-                <div id="favorite">
-                    <div class="d-flex justify-content-center">
-                        <div class="loader"></div>
-                    </div>
+        <div class="d-flex flex-column px-5">
+            <h2 id="content_title" class="mx-auto py-3">Favorite Restaurant</h2>
+            <div id="favorite">
+                <div class="d-flex justify-content-center">
+                    <div class="loader"></div>
                 </div>
             </div>
-        `;
+        </div>
+    `;
   },
 
   async afterRender() {
@@ -26,10 +26,10 @@ const Like = {
       document.getElementsByClassName('loader')[0].remove();
     } else {
       restaurantsContainer.innerHTML = /*html*/ `
-                <div class="d-flex justify-content-center">
-                    <h3>Tidak ada favorite</h3>
-                </div>
-            `;
+          <div class="d-flex justify-content-center">
+              <h3>Tidak ada favorite</h3>
+          </div>
+      `;
     }
   },
 };
