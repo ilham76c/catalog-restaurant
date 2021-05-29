@@ -14,6 +14,7 @@
     "rules": {
         "no-param-reassign": 0,
         "no-underscore-dangle": 0,
-        "spaced-comment": [2, "never"]
+        "spaced-comment": [2, "never"],
+        "no-restricted-globals": ["error", "event", "fdescribe"]
     }
 }
