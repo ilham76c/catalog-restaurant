@@ -3,7 +3,6 @@ import '../styles/main.css';
 import App from './views/app';
 import swRegister from './utils/sw-register';
 
-
 const app = new App({
   button: document.getElementById('hamburger'),
   drawer: document.getElementById('drawer'),
