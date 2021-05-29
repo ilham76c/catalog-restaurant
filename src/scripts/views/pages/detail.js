@@ -1,10 +1,11 @@
-import RestaurantSource from '../../data/resraurant-source';
+import RestaurantSource from '../../data/restaurant-source';
 
 import { createRestaurantDetailTemplate } from '../templates/template-creator';
 
 import UrlParser from '../../routes/url-parser';
 
 import LikeButtonInitiator from '../../utils/like-button-initiator';
+import AddReviewInitiator from '../../utils/add-review-initiator';
 
 const Detail = {
   async render() {
@@ -42,6 +43,14 @@ const Detail = {
         rating: restaurant.rating,
         customerReviews: restaurant.customerReviews,
       },
+    });
+
+    AddReviewInitiator.init({
+      button: document.querySelector('#addReview'),
+      name: document.getElementsByName("name")[0],
+      review: document.getElementsByName("review")[0],
+      id: restaurant.id,
+      reviews: document.querySelector('#reviews'),
     });
   },
 };

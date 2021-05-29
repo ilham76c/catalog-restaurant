@@ -72,12 +72,19 @@ const createRestaurantDetailTemplate = (restaurant) => /*html*/ `
 
     <div id="komentar" class="pb-1 py-1 px-1">
       <h3>Customer Reviews</h3>
-      ${createCustomerReviews(restaurant.customerReviews)}
+
+      <div id="reviews">
+        ${createCustomerReviews(restaurant.customerReviews)}
+      </div>
 
       <div class="d-flex flex-column mt-2">
-        <textarea rows="5" class="w-100 text-left" placeholder="Tambahkan komentar"></textarea>
-        <div class="text-right py-1">
-          <button>Kirim</button>
+        <label for="name">Name</label>
+        <input class="mb-1" type="text" id="name" name="name">
+        
+        <label for="review">Review</label>
+        <textarea name="review" rows="5" class="w-100 text-left mb-1" placeholder="Add Review"></textarea>
+        <div class="text-right">
+          <button id="addReview">Send</button>
         </div>
       </div>
     </div>
@@ -101,4 +108,5 @@ export {
   createRestaurantDetailTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
+  createCustomerReviews
 };

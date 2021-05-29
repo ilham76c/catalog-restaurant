@@ -1,4 +1,4 @@
-import RestaurantSource from '../../data/resraurant-source';
+import RestaurantSource from '../../data/restaurant-source';
 import { createRestaurantItemTemplate } from '../templates/template-creator';
 
 const Home = {
@@ -19,14 +19,14 @@ const Home = {
     const restaurants = await RestaurantSource.listRestaurants();
 
     const restaurantsContainer = document.querySelector('#restaurants');
-
-    [...restaurants.entries()].forEach((restaurant, idx) => {
+    
+    for (const [idx, restaurant] of restaurants.entries()) {
       restaurantsContainer.innerHTML
         += createRestaurantItemTemplate(restaurant);
       if ((idx + 1) % 2 === 0) {
         restaurantsContainer.getElementsByTagName('section')[idx].classList.add('flex-row-reverse');
       }
-    });
+    }
     document.getElementsByClassName('loader')[0].remove();
   },
 };
