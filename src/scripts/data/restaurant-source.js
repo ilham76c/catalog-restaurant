@@ -18,13 +18,12 @@ class RestaurantSource {
   }
 
   static async addReview({ name, review, id }) {
-    
     const response = await fetch(API_ENDPOINT.REVIEW, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'X-Auth-Token': '12345',
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
       },
       body: JSON.stringify({ name, review, id }),
     });

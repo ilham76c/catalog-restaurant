@@ -13,6 +13,6 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   if (event.request.method === 'GET') {
-    event.respondWith(CacheHelper.revalidateCache(event.request)); 
+    event.respondWith(CacheHelper.revalidateCache(event.request));
   }
 });

@@ -47,8 +47,8 @@ const Detail = {
 
     AddReviewInitiator.init({
       button: document.querySelector('#addReview'),
-      name: document.getElementsByName("name")[0],
-      review: document.getElementsByName("review")[0],
+      name: document.getElementsByName('name')[0],
+      review: document.getElementsByName('review')[0],
       id: restaurant.id,
       reviews: document.querySelector('#reviews'),
     });

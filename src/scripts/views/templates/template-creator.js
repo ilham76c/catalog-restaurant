@@ -42,7 +42,7 @@ const createMenus = (menus) => /*html*/ `
 
 const createCustomerReviews = (customerReviews) => {
   let review = '';
-  customerReviews.forEach((customerReview) => {
+  customerReviews.reverse().forEach((customerReview) => {
     review += /*html*/ `
       <div class="d-flex flex-column mb-1 p-1 komentar">
         <div class="d-flex justify-content-between mb-1">
@@ -73,20 +73,21 @@ const createRestaurantDetailTemplate = (restaurant) => /*html*/ `
     <div id="komentar" class="pb-1 py-1 px-1">
       <h3>Customer Reviews</h3>
 
-      <div id="reviews">
-        ${createCustomerReviews(restaurant.customerReviews)}
-      </div>
-
       <div class="d-flex flex-column mt-2">
         <label for="name">Name</label>
         <input class="mb-1" type="text" id="name" name="name">
         
         <label for="review">Review</label>
         <textarea name="review" rows="5" class="w-100 text-left mb-1" placeholder="Add Review"></textarea>
-        <div class="text-right">
-          <button id="addReview">Send</button>
+        <div class="text-right mb-2">
+          <button id="addReview"><b>Send</b></button>
         </div>
       </div>
+      
+      <div id="reviews">
+        ${createCustomerReviews(restaurant.customerReviews)}
+      </div>
+  
     </div>
   </section>
 `;
@@ -108,5 +109,5 @@ export {
   createRestaurantDetailTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
-  createCustomerReviews
+  createCustomerReviews,
 };

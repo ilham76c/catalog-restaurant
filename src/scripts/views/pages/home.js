@@ -19,14 +19,13 @@ const Home = {
     const restaurants = await RestaurantSource.listRestaurants();
 
     const restaurantsContainer = document.querySelector('#restaurants');
-    
-    for (const [idx, restaurant] of restaurants.entries()) {
+    restaurants.forEach((restaurant, idx) => {
       restaurantsContainer.innerHTML
         += createRestaurantItemTemplate(restaurant);
       if ((idx + 1) % 2 === 0) {
         restaurantsContainer.getElementsByTagName('section')[idx].classList.add('flex-row-reverse');
       }
-    }
+    });
     document.getElementsByClassName('loader')[0].remove();
   },
 };

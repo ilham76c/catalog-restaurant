@@ -160,6 +160,17 @@ main {
     object-fit: cover;
 }
 
+#addReview {
+    min-height: 44px;
+    min-width: 55px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+}
+
+#addReview:hover {
+    background-color: blue;
+}
 
 .mx-auto {
     margin: 0 auto;
