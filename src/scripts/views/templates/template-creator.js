@@ -62,6 +62,7 @@ const createRestaurantDetailTemplate = (restaurant) => /*html*/ `
       <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Gambar ${restaurant.name}" crossorigin="anonymous">
 
       <div class="mx-1 w-100">                
+        <p><b>Name</b>&emsp;&emsp;&emsp; : ${restaurant.name}</p>
         <p><b>Rating</b>&emsp;&emsp;&emsp;: ${restaurant.rating}</p>
         <p><b>Address</b>&emsp;&emsp;: ${restaurant.address}</p>
         <p><b>Categories</b>&emsp;: ${createCategories(restaurant.categories)}</p>

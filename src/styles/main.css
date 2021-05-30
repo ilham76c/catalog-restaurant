@@ -211,7 +211,7 @@ main {
 }
 
 .flex-grow-1 {
-    flex-basis: 33%;
+    flex-basis: 32%;
 }
 
 .flex-row {
