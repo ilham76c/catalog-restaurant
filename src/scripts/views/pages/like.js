@@ -26,9 +26,7 @@ const Like = {
       document.getElementsByClassName('loader')[0].remove();
     } else {
       restaurantsContainer.innerHTML = /*html*/ `
-          <div class="d-flex justify-content-center">
-              <h3>Tidak ada favorite</h3>
-          </div>
+        <p class="text-center text-secondary">No favorite restaurant</p>
       `;
     }
   },
