@@ -16,17 +16,24 @@ const Home = {
   },
 
   async afterRender() {
-    const restaurants = await RestaurantSource.listRestaurants();
+    try {
+      const restaurants = await RestaurantSource.listRestaurants();
 
-    const restaurantsContainer = document.querySelector('#restaurants');
-    restaurants.forEach((restaurant, idx) => {
-      restaurantsContainer.innerHTML
-        += createRestaurantItemTemplate(restaurant);
-      if ((idx + 1) % 2 === 0) {
-        restaurantsContainer.getElementsByTagName('section')[idx].classList.add('flex-row-reverse');
-      }
-    });
-    document.getElementsByClassName('loader')[0].remove();
+      const restaurantsContainer = document.querySelector('#restaurants');
+      restaurants.forEach((restaurant, idx) => {
+        restaurantsContainer.innerHTML
+          += createRestaurantItemTemplate(restaurant);
+        if ((idx + 1) % 2 === 0) {
+          restaurantsContainer.getElementsByTagName('section')[idx].classList.add('flex-row-reverse');
+        }
+      });
+      document.getElementsByClassName('loader')[0].remove();
+    } catch (error) {
+      document.querySelector('#restaurants').innerHTML = /*html*/ `
+          <p class="text-center text-secondary">Failed to load data, check your internet connection</p>
+      `;
+      console.error(error);
+    }
   },
 };
 

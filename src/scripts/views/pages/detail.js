@@ -23,35 +23,43 @@ const Detail = {
   },
 
   async afterRender() {
-    const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const restaurant = await RestaurantSource.detailRestaurant(url.id);
-    const restaurantContainer = document.querySelector('#detail');
+    try {
+      const url = UrlParser.parseActiveUrlWithoutCombiner();
+      const restaurant = await RestaurantSource.detailRestaurant(url.id);
+      console.log(restaurant);
+      const restaurantContainer = document.querySelector('#detail');
 
-    restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
+      restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
 
-    LikeButtonInitiator.init({
-      likeButtonContainer: document.querySelector('#likeButtonContainer'),
-      restaurant: {
+      LikeButtonInitiator.init({
+        likeButtonContainer: document.querySelector('#likeButtonContainer'),
+        restaurant: {
+          id: restaurant.id,
+          name: restaurant.name,
+          description: restaurant.description,
+          city: restaurant.city,
+          address: restaurant.address,
+          pictureId: restaurant.pictureId,
+          categories: restaurant.categories,
+          menus: restaurant.menus,
+          rating: restaurant.rating,
+          customerReviews: restaurant.customerReviews,
+        },
+      });
+
+      AddReviewInitiator.init({
+        button: document.querySelector('#addReview'),
+        name: document.getElementsByName('name')[0],
+        review: document.getElementsByName('review')[0],
         id: restaurant.id,
-        name: restaurant.name,
-        description: restaurant.description,
-        city: restaurant.city,
-        address: restaurant.address,
-        pictureId: restaurant.pictureId,
-        categories: restaurant.categories,
-        menus: restaurant.menus,
-        rating: restaurant.rating,
-        customerReviews: restaurant.customerReviews,
-      },
-    });
-
-    AddReviewInitiator.init({
-      button: document.querySelector('#addReview'),
-      name: document.getElementsByName('name')[0],
-      review: document.getElementsByName('review')[0],
-      id: restaurant.id,
-      reviews: document.querySelector('#reviews'),
-    });
+        reviews: document.querySelector('#reviews'),
+      });
+    } catch (error) {
+      document.querySelector('#detail').innerHTML = /*html*/ `
+          <p class="text-center text-secondary">Failed to load data, check your internet connection</p>
+      `;
+      console.error(error);
+    }
   },
 };
 
