@@ -647,6 +647,10 @@ main {
     color: black;
 }
 
+.text-secondary {
+    color: #d0cfca;
+}
+
 .hidden {
     visibility: hidden;
 }
