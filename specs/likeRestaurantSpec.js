@@ -57,17 +57,17 @@ describe('Liking A Movie', () => {
       },
     });
 
-    // Tambahkan film dengan ID 1 ke daftar film yang disukai
+    //Tambahkan film dengan ID 1 ke daftar film yang disukai
     await FavoriteRestaurantIdb.putRestaurant({ id: 1 });
-    // Simulasikan pengguna menekan tombol suka film
+    //Simulasikan pengguna menekan tombol suka film
     document.querySelector('#likeButton').dispatchEvent(new Event('click'));
-    // tidak ada film yang ganda
+    //tidak ada film yang ganda
     expect(await FavoriteRestaurantIdb.getAllRestaurants()).toEqual([{ id: 1 }]);
 
     FavoriteRestaurantIdb.deleteRestaurant(1);
   });
 
-  xit('should not add a movie when it has no id', async () => {
+  it('should not add a movie when it has no id', async () => {
     await LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant: {},
