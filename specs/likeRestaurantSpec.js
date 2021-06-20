@@ -1,3 +1,4 @@
+/*eslint-disable no-undef */
 import LikeButtonInitiator from '../src/scripts/utils/like-button-initiator';
 import FavoriteRestaurantIdb from '../src/scripts/data/favorite-restaurant-idb';
 
