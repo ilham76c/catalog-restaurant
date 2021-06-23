@@ -2,10 +2,6 @@ const assert = require('assert');
 /*eslint-disable no-undef */
 Feature('Liking Restaurant');
 
-//Before(({ I }) => {
-//I.amOnPage('/#/like');
-//});
-
 Scenario('showing empty liked restaurant', ({ I }) => {
   I.amOnPage('/#/like');
   I.seeElement('#favorite');
@@ -13,10 +9,8 @@ Scenario('showing empty liked restaurant', ({ I }) => {
 });
 
 Scenario('liking one restaurant', async ({ I }) => {
-  //I.see('Tidak ada film untuk ditampilkan', '.movie-item__not__found');
-
   I.amOnPage('/');
-  //pause();
+
   I.seeElement('#restaurants a');
 
   const firstRestaurant = locate('#restaurants a').first();
@@ -24,7 +18,6 @@ Scenario('liking one restaurant', async ({ I }) => {
 
   I.click(firstRestaurant);
 
-  // I.amOnPage('/#/like');
   pause();
   I.seeElement('#likeButton');
   I.click('#likeButton');
@@ -37,7 +30,3 @@ Scenario('liking one restaurant', async ({ I }) => {
 
   assert.strictEqual(firstRestaurantTitle, firstLikedRestaurantTitle);
 });
-
-// Scenario('liked restaurant', ({ I }) => {
-//   I.amOnPage('/#/like');
-// });
