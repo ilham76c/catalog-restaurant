@@ -83,7 +83,7 @@ const createRestaurantDetailTemplate = (restaurant) => /*html*/ `
 
       <div class="d-flex flex-column mt-2">
         <label for="name">Name</label>
-        <input class="mb-1" type="text" id="name" name="name">
+        <input class="mb-1" type="text" id="name" name="name" placeholder="Name">
         
         <label for="review">Review</label>
         <textarea name="review" rows="5" class="w-100 text-left mb-1" placeholder="Add Review"></textarea>
