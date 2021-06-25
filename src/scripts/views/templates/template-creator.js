@@ -3,7 +3,10 @@ import CONFIG from '../../globals/config';
 const createRestaurantItemTemplate = (restaurant) => /*html*/ `
   <section class="card d-flex mb-3 bg-white text-black">
     <div class="card-head position-relative">
-      <img class="lazyload" src="./images/default.png" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="Gambar ${restaurant.name}" crossorigin="anonymous">
+      <picture>
+        <source class="lazyload" media="(max-width: 767px)" srcset="./images/default.png" data-srcset="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}">
+        <img class="lazyload" src="./images/default.png" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="Gambar ${restaurant.name}" crossorigin="anonymous">
+      </picture>
       <p class="position-absolute m-1">${restaurant.city}</p>
     </div>     
 
@@ -61,8 +64,10 @@ const createRestaurantDetailTemplate = (restaurant) => /*html*/ `
     <div class="d-flex w-100">
       
       <div class="card-head position-relative w-100">
-      
-        <img class="lazyload" src="./images/default.png" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="Gambar ${restaurant.name}" crossorigin="anonymous">
+        <picture>
+          <source class="lazyload" media="(max-width: 767px)" srcset="./images/default.png" data-srcset="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}">
+          <img class="lazyload" src="./images/default.png" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="Gambar ${restaurant.name}" crossorigin="anonymous">
+        </picture>
         <p class="position-absolute m-1">${restaurant.city}</p>
       </div>     
 
