@@ -12,6 +12,8 @@
         "sourceType": "module"
     },
     "rules": {
+        "no-console": "off",
+        "no-alert": "off",
         "no-param-reassign": 0,
         "no-underscore-dangle": 0,
         "spaced-comment": [2, "never"],
