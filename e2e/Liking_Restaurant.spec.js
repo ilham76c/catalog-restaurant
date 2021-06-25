@@ -18,7 +18,6 @@ Scenario('liking one restaurant', async ({ I }) => {
 
   I.click(firstRestaurant);
 
-  pause();
   I.seeElement('#likeButton');
   I.click('#likeButton');
 

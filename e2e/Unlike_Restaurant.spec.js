@@ -8,7 +8,6 @@ Scenario('unlike one restaurant', async ({ I }) => {
 
   I.click(locate('#restaurants a').first());
 
-  pause();
   I.seeElement('#likeButton');
   I.click('#likeButton');
 
