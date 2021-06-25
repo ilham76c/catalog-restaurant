@@ -3,9 +3,7 @@ import CONFIG from '../../globals/config';
 const createRestaurantItemTemplate = (restaurant) => /*html*/ `
   <section class="card d-flex mb-3 bg-white text-black">
     <div class="card-head position-relative">
-      
-        <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="Gambar ${restaurant.name}" crossorigin="anonymous">
-      
+      <img class="lazyload" src="./images/default.png" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="Gambar ${restaurant.name}" crossorigin="anonymous">
       <p class="position-absolute m-1">${restaurant.city}</p>
     </div>     
 
@@ -64,7 +62,7 @@ const createRestaurantDetailTemplate = (restaurant) => /*html*/ `
       
       <div class="card-head position-relative w-100">
       
-        <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="Gambar ${restaurant.name}" crossorigin="anonymous">
+        <img class="lazyload" src="./images/default.png" data-src="${CONFIG.BASE_IMAGE_URL_MEDIUM + restaurant.pictureId}" alt="Gambar ${restaurant.name}" crossorigin="anonymous">
         <p class="position-absolute m-1">${restaurant.city}</p>
       </div>     
 
