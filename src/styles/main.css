@@ -41,9 +41,9 @@ main {
 }
 
 #jumbotron {
-    background-image: url(../public/images/heros/hero-image_2.jpg);
+    background-image: url(../public/images/heros/hero-image-high.jpg);
     width: 100%;        
-    height: 70vh;
+    height: 75vh;
     background-repeat: no-repeat;
     background-size: 100%;        
     object-fit: cover;
@@ -601,7 +601,8 @@ main {
     }
 
     #jumbotron {
-        height: 40vh;
+        height: 35vh;
+        background-image: url(../public/images/heros/hero-image-medium.jpg);
     }
 
     #content > div {
@@ -661,7 +662,8 @@ main {
     }
 
     #jumbotron {
-        height: 40vh;
+        height: 35vh;
+        background-image: url(../public/images/heros/hero-image-small.jpg);
     }
 
     #content > div {
@@ -693,6 +695,7 @@ main {
 
     #jumbotron {
         height: 35vh;
+        background-image: url(../public/images/heros/hero-image-small.jpg);
     }
 
     .card {
