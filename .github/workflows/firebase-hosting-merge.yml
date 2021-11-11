@@ -10,8 +10,8 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: npm run build
-      - run: npm run test
+      - name: Set project dir environment var
+        run: echo ::set-env name=PROJECT_DIR::"$GITHUB_WORKSPACE"
       - uses: actions/checkout@v2
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
