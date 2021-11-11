@@ -17,3 +17,6 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CATALOG_RESTAURANT }}'
           channelId: live
           projectId: catalog-restaurant
+          node-version: '14'
+      - run: npm run build
+      - run: npm run test
