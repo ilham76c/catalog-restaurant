@@ -11,7 +11,7 @@
     "e2e": "codeceptjs run --steps"
   },
   "keywords": [],
-  "author": "Moh. Ilham Burhanuddin <batandos158@gmail.com>",
+  "author": "Moh. Ilham Burhanuddin",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.10.5",
